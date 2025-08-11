@@ -196,7 +196,9 @@
     (function(){
       function h(tag, cls){ var el=document.createElement(tag); if(cls) el.className=cls; return el; }
       function cardTpl(p){
-        var card = h('div','box project-card');
+        var card = h('a','box project-card');
+        card.href = 'project_detail.html?slug=' + encodeURIComponent(p.slug);
+        card.setAttribute('aria-label', 'Open details for ' + p.title);
         card.setAttribute('data-video', p.video||'');
         card.setAttribute('data-poster', p.poster||'');
         var img = h('img','project-poster');
@@ -209,7 +211,7 @@
         var pEl = h('p'); pEl.textContent = p.summary || ''; detail.appendChild(pEl);
         card.appendChild(detail);
         card.addEventListener('project:open', function(){
-          // Placeholder for modal/detail navigation
+          window.location.href = card.href;
         });
         return card;
       }
