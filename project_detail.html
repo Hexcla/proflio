@@ -15,6 +15,10 @@
     .tag{padding:6px 10px;border:1px solid var(--card-border);border-radius:20px;font-size:12px}
     .video-wrap{position:relative;aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden}
     .video-wrap video,.video-wrap iframe{width:100%;height:100%}
+    .steps{margin-top:24px}
+    .step{border-left:4px solid #4b208c;padding-left:12px;margin:14px 0}
+    .step h5{margin:0 0 4px 0}
+    .links a{display:inline-block;margin-right:12px}
   </style>
   <script>
     (function(){
@@ -45,6 +49,21 @@
         var links = document.getElementById('links');
         if (p.repo) { var a=h('a'); a.href=p.repo; a.textContent='Repository'; a.target='_blank'; a.rel='noopener'; links.appendChild(a); }
         if (p.demo) { var a2=h('a'); a2.style.marginLeft='12px'; a2.href=p.demo; a2.textContent='Live Demo'; a2.target='_blank'; a2.rel='noopener'; links.appendChild(a2); }
+        // Optional extra steps breakdown
+        var steps = p.steps || [
+          {title:'Plan', text:'Requirements, constraints, and success metrics.'},
+          {title:'Design', text:'System design, data flow, and UX/UI decisions.'},
+          {title:'Build', text:'Implementation details and libraries used.'},
+          {title:'Test', text:'Unit/integration tests and validation.'},
+          {title:'Deliver', text:'Deployment, docs, and monitoring.'}
+        ];
+        var stepsWrap = document.getElementById('steps');
+        steps.forEach(function(s){
+          var d=h('div','step');
+          var hh=h('h5'); hh.textContent=s.title; d.appendChild(hh);
+          var pp=h('p'); pp.textContent=s.text; d.appendChild(pp);
+          stepsWrap.appendChild(d);
+        });
       }
       function init(){
         var slug = getParam('slug');
@@ -65,7 +84,7 @@
     <p id="summary"></p>
     <div class="tags" id="tags"></div>
     <div class="video-wrap" id="media"></div>
-    <div style="margin-top:18px" id="links"></div>
+    <div class="links" style="margin-top:18px" id="links"></div>
   </div>
 
   <div class="container" style="margin-bottom:30px">
@@ -80,6 +99,7 @@
     <p id="res"></p>
     <h5>Learnings</h5>
     <p id="learn"></p>
+    <div class="steps" id="steps"></div>
   </div>
 
   <script src="jquery-3.4.1.min.js"></script>

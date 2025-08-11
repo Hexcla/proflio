@@ -190,7 +190,6 @@
   <script src="jquery-3.4.1.min.js"></script>
   <script src="bootstrap.js"></script>
   <script src="js/main.js" defer></script>
-  <script src="js/video.js" defer></script>
   <script>
     // Render project cards from JSON
     (function(){
@@ -201,11 +200,12 @@
         card.setAttribute('aria-label', 'Open details for ' + p.title);
         card.setAttribute('data-video', p.video||'');
         card.setAttribute('data-poster', p.poster||'');
-        var img = h('img','project-poster');
+        var imgBox = h('div','img-box');
+        var img = h('img','img1 project-poster');
         img.src = p.poster; img.alt = p.title + ' poster'; img.loading='lazy';
-        card.appendChild(img);
-        var overlay = h('button','play-overlay'); overlay.setAttribute('aria-label','Play preview'); overlay.textContent='▶';
-        card.appendChild(overlay);
+        imgBox.appendChild(img);
+        card.appendChild(imgBox);
+        // remove video overlay; video will appear in detail page only
         var detail = h('div','detail-box');
         var h5 = h('h5'); h5.textContent = p.title; detail.appendChild(h5);
         var pEl = h('p'); pEl.textContent = p.summary || ''; detail.appendChild(pEl);
