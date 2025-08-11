@@ -1,0 +1,40 @@
+[
+  {
+    "title": "YOLO-Based Obstacle Detection",
+    "slug": "yolo-obstacle-detection",
+    "poster": "images/p1.png",
+    "video": "",
+    "tags": ["Python", "YOLO", "Computer Vision"],
+    "repo": "",
+    "demo": "",
+    "downloads": [],
+    "summary": "Obstacle detection using YOLO to assist navigation.",
+    "caseStudy": {
+      "problem": "Detect obstacles in real-time for navigation.",
+      "approach": "Leverage YOLO with fine-tuned dataset and OpenCV pipeline.",
+      "implementation": "Python + OpenCV, model inference, bounding boxes, tracking.",
+      "results": "Accurate detection on varied environments.",
+      "learnings": "Optimizing model and pre/post-processing matters for speed."
+    }
+  },
+  {
+    "title": "Insect and Plant Disease Detection",
+    "slug": "insect-plant-disease",
+    "poster": "images/bot.jpg",
+    "video": "",
+    "tags": ["Deep Learning", "Agritech"],
+    "repo": "",
+    "demo": "",
+    "downloads": [],
+    "summary": "Classify pests and plant diseases to aid farmers.",
+    "caseStudy": {
+      "problem": "Identify insect pests and plant diseases from images.",
+      "approach": "Custom CNN / transfer learning with curated dataset.",
+      "implementation": "Model training, augmentation, evaluation.",
+      "results": "High precision/recall on benchmark set.",
+      "learnings": "Data quality and augmentation are critical."
+    }
+  }
+]
+
+

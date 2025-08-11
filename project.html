@@ -26,6 +26,7 @@
   <link href="style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="responsive.css" rel="stylesheet" />
+  <link href="css/theme.css" rel="stylesheet" />
 </head>
 
 <body class="sub_page">
@@ -85,73 +86,7 @@
         <img src="images/project-manager.png" alt="">
       </div>
 
-      <div class="service_container">
-        <div class="box">
-          <div class="img-box">
-            <img src="images/p1.png" class="img1" alt="">
-          </div>
-          <div class="detail-box">
-            <h5>
-              YOLO-Based Obstacle Detection
-            </h5>
-            <p>
-              There are many variations of passages of Lorem Ipsum available,
-            </p>
-          </div>
-        </div>
-        <div class="box active">
-          <div class="img-box">
-            <img src="images/bot.jpg" class="img1" alt="">
-          </div>
-          <div class="detail-box">
-            <h5>
-              Insect and Plant Disease Detection
-            </h5>
-            <p>
-              There are many variations of passages of Lorem Ipsum available,
-            </p>
-          </div>
-        </div>
-        <div class="box">
-          <div class="img-box">
-            <img src="images/s3.png" class="img1" alt="">
-          </div>
-          <div class="detail-box">
-            <h5>
-              Equipment Maintenance
-            </h5>
-            <p>
-              There are many variations of passages of Lorem Ipsum available,
-            </p>
-          </div>
-        </div>
-        <div class="box ">
-          <div class="img-box">
-            <img src="images/s4.png" class="img1" alt="">
-          </div>
-          <div class="detail-box">
-            <h5>
-              Offshore Engineering
-            </h5>
-            <p>
-              There are many variations of passages of Lorem Ipsum available,
-            </p>
-          </div>
-        </div>
-        <div class="box">
-          <div class="img-box">
-            <img src="images/s5.png" class="img1" alt="">
-          </div>
-          <div class="detail-box">
-            <h5>
-              Electrical Wiring
-            </h5>
-            <p>
-              There are many variations of passages of Lorem Ipsum available,
-            </p>
-          </div>
-        </div>
-      </div>
+      <div class="service_container" id="projects-grid" aria-live="polite"></div>
       <div class="btn-box">
         <a href="">
           Read More
@@ -254,6 +189,39 @@
 
   <script src="jquery-3.4.1.min.js"></script>
   <script src="bootstrap.js"></script>
+  <script src="js/video.js" defer></script>
+  <script>
+    // Render project cards from JSON
+    (function(){
+      function h(tag, cls){ var el=document.createElement(tag); if(cls) el.className=cls; return el; }
+      function cardTpl(p){
+        var card = h('div','box project-card');
+        card.setAttribute('data-video', p.video||'');
+        card.setAttribute('data-poster', p.poster||'');
+        var img = h('img','project-poster');
+        img.src = p.poster; img.alt = p.title + ' poster'; img.loading='lazy';
+        card.appendChild(img);
+        var overlay = h('button','play-overlay'); overlay.setAttribute('aria-label','Play preview'); overlay.textContent='▶';
+        card.appendChild(overlay);
+        var detail = h('div','detail-box');
+        var h5 = h('h5'); h5.textContent = p.title; detail.appendChild(h5);
+        var pEl = h('p'); pEl.textContent = p.summary || ''; detail.appendChild(pEl);
+        card.appendChild(detail);
+        card.addEventListener('project:open', function(){
+          // Placeholder for modal/detail navigation
+        });
+        return card;
+      }
+      fetch('data/projects.json')
+        .then(function(r){ return r.json(); })
+        .then(function(list){
+          var grid = document.getElementById('projects-grid');
+          if (!grid) return;
+          list.forEach(function(p){ grid.appendChild(cardTpl(p)); });
+        })
+        .catch(function(){ /* ignore */ });
+    })();
+  </script>
 
 
 </body>

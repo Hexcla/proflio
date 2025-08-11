@@ -26,6 +26,7 @@
   <link href="style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="responsive.css" rel="stylesheet" />
+  <link href="css/theme.css" rel="stylesheet" />
 </head>
 
 <body class="sub_page">
@@ -89,7 +90,8 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <form method="post" action="https://script.google.com/macros/s/AKfycbzADqSp_N41PpAXiNxdDRoNC-vWo6LmMBm56_PDd5r_euGMjI1pqaVQwGIbHX06L19v/exec" name="contact-form"></form>
+          <form name="contact-form" data-emailjs-service="" data-emailjs-template="" data-emailjs-user="">
+            <input type="text" name="_hp" class="visually-hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <div>
               <input type="text" name="NAME" placeholder="Name" />
             </div>
@@ -106,6 +108,7 @@
               <button type="submit" Class="btn btn2">send</button>
             </div>
           </form>
+          <span id="msg" role="status" aria-live="polite"></span>
         </div>
         <div class="col-md-6">
           <div class="map_container">
@@ -213,6 +216,8 @@
 
   <script src="jquery-3.4.1.min.js"></script>
   <script src="bootstrap.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+  <script src="js/contact.js" defer></script>
 
 </body>
 
