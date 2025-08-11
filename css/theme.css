@@ -8,16 +8,6 @@
   --btn-bg: #ffffff;
 }
 
-[data-theme="dark"] {
-  --bg: #0f0f12;
-  --fg: #e9e9ee;
-  --muted: #a6a6b0;
-  --card-bg: #16161a;
-  --card-border: rgba(255,255,255,0.09);
-  --focus: #8b5cf6;
-  --btn-bg: #1f1f25;
-}
-
 html, body {
   background: var(--bg);
   color: var(--fg);
