@@ -1,0 +1,52 @@
+[
+  {
+    "title": "Computer Vision Intern",
+    "slug": "cv-intern",
+    "poster": "images/blog1.jpg",
+    "organization": "Vision Labs",
+    "role": "Computer Vision Intern",
+    "period": "Jan 2024 – Mar 2024",
+    "tags": ["Python", "OpenCV", "YOLO"],
+    "summary": "Built and evaluated object detection prototypes for real-time scenarios.",
+    "video": "",
+    "highlights": [
+      "Prepared datasets and annotation workflows",
+      "Benchmarked detection models for accuracy and speed",
+      "Delivered demo app for stakeholder feedback"
+    ]
+  },
+  {
+    "title": "Research Intern",
+    "slug": "research-intern",
+    "poster": "images/blog2.jpg",
+    "organization": "AI Research Center",
+    "role": "Research Intern",
+    "period": "Jun 2023 – Aug 2023",
+    "tags": ["Deep Learning", "NLP"],
+    "summary": "Explored model architectures and prepared a literature review.",
+    "video": "",
+    "highlights": [
+      "Implemented baseline models for comparison",
+      "Summarized findings and proposed next steps",
+      "Collaborated with cross-functional mentors"
+    ]
+  },
+  {
+    "title": "Software Intern",
+    "slug": "software-intern",
+    "poster": "images/research.png",
+    "organization": "TechWorks",
+    "role": "Software Intern",
+    "period": "Sep 2022 – Dec 2022",
+    "tags": ["JavaScript", "APIs", "UI"],
+    "summary": "Built internal tools and improved UI flows for a pilot product.",
+    "video": "",
+    "highlights": [
+      "Created dashboards with clear KPIs",
+      "Integrated with backend APIs",
+      "Documented deployment and usage"
+    ]
+  }
+]
+
+

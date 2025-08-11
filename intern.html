@@ -88,38 +88,7 @@
         </h2>
         <img src="images/research.png" alt="">
       </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="box">
-            <div class="img-box">
-              <img src="images/blog1.jpg" alt="">
-            </div>
-            <div class="detail-box">
-              <h5>
-                Blog Title Goes Here
-              </h5>
-              <p>
-                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="box">
-            <div class="img-box">
-              <img src="images/blog2.jpg" alt="">
-            </div>
-            <div class="detail-box">
-              <h5>
-                Blog Title Goes Here
-              </h5>
-              <p>
-                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="row" id="intern-grid"></div>
     </div>
   </section>
 
@@ -223,6 +192,25 @@
 
   <script src="jquery-3.4.1.min.js"></script>
   <script src="bootstrap.js"></script>
+  <script>
+    (function(){
+      function h(tag, cls){ var el=document.createElement(tag); if(cls) el.className=cls; return el; }
+      function card(it){
+        var col=h('div','col-md-6');
+        var box=h('a','box'); box.href='intern_detail.html?slug='+encodeURIComponent(it.slug);
+        var imgBox=h('div','img-box'); var img=h('img'); img.src=it.poster; img.alt=it.title; imgBox.appendChild(img); box.appendChild(imgBox);
+        var det=h('div','detail-box');
+        var h5=h('h5'); h5.textContent=it.title; det.appendChild(h5);
+        var p=h('p'); p.textContent=it.summary||''; det.appendChild(p);
+        box.appendChild(det); col.appendChild(box); return col;
+      }
+      var url=(location.port==='5000')? '/api/interns' : 'data/interns.json';
+      fetch(url).then(function(r){return r.json()}).then(function(list){
+        var grid=document.getElementById('intern-grid');
+        (list||[]).forEach(function(it){ grid.appendChild(card(it)); });
+      });
+    })();
+  </script>
   <script src="js/main.js" defer></script>
 
 </body>

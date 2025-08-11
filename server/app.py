@@ -7,6 +7,7 @@ STATIC_DIR = BASE_DIR
 DATA_FILE = STATIC_DIR / 'data' / 'projects.json'
 LOGS_DIR = STATIC_DIR / 'logs'
 LOGS_DIR.mkdir(exist_ok=True)
+INTERNS_FILE = STATIC_DIR / 'data' / 'interns.json'
 
 app = Flask(__name__, static_folder=str(STATIC_DIR), static_url_path='')
 
@@ -41,6 +42,16 @@ def api_contact():
     with open(log_path, 'a', encoding='utf-8') as f:
         f.write(json.dumps(entry, ensure_ascii=False) + '\n')
     return jsonify({'ok': True})
+
+
+@app.get('/api/interns')
+def api_interns():
+    try:
+        with open(INTERNS_FILE, 'r', encoding='utf-8') as f:
+            items = json.load(f)
+    except Exception:
+        items = []
+    return jsonify(items)
 
 
 if __name__ == '__main__':

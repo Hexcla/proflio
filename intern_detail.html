@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Internship Detail</title>
+  <link rel="stylesheet" type="text/css" href="bootstrap.css" />
+  <link href="style.css" rel="stylesheet" />
+  <link href="responsive.css" rel="stylesheet" />
+  <link href="css/theme.css" rel="stylesheet" />
+  <style>
+    .detail-hero{padding-top:40px;padding-bottom:30px}
+    .tags{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+    .tag{padding:6px 10px;border:1px solid var(--card-border);border-radius:20px;font-size:12px}
+    .media{aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden}
+  </style>
+  <script>
+    (function(){
+      function q(n){const u=new URL(location.href);return u.searchParams.get(n)||''}
+      function h(t,c){var e=document.createElement(t); if(c) e.className=c; return e}
+      function render(it){
+        document.title = it.title + ' - Internship';
+        document.getElementById('title').textContent = it.title;
+        document.getElementById('org').textContent = it.organization + ' • ' + it.role;
+        document.getElementById('period').textContent = it.period || '';
+        var tags = document.getElementById('tags');
+        (it.tags||[]).forEach(function(t){ var s=h('span','tag'); s.textContent=t; tags.appendChild(s); });
+        var media = document.getElementById('media');
+        var img = h('img'); img.src = it.poster; img.alt = it.title; img.style.width='100%'; media.appendChild(img);
+        document.getElementById('summary').textContent = it.summary || '';
+        var ul = document.getElementById('high');
+        (it.highlights||[]).forEach(function(x){ var li=document.createElement('li'); li.textContent=x; ul.appendChild(li); });
+      }
+      function init(){
+        var slug=q('slug');
+        var url=(location.port==='5000')? '/api/interns' : 'data/interns.json';
+        fetch(url).then(function(r){return r.json()}).then(function(list){
+          var it=(list||[]).find(function(x){return x.slug===slug})||list[0];
+          if(it) render(it);
+        });
+      }
+      if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', init); else init();
+    })();
+  </script>
+</head>
+<body class="sub_page">
+  <div class="container detail-hero">
+    <a href="intern.html">← Back to Intern</a>
+    <h2 id="title"></h2>
+    <div id="org"></div>
+    <div id="period"></div>
+    <div id="tags" class="tags"></div>
+    <div id="media" class="media"></div>
+    <p id="summary" style="margin-top:14px"></p>
+    <ul id="high"></ul>
+  </div>
+  <script src="jquery-3.4.1.min.js"></script>
+  <script src="bootstrap.js"></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
+
+
