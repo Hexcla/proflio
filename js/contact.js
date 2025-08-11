@@ -46,6 +46,15 @@
         ts: new Date().toISOString()
       };
 
+      // Prefer backend API if available (Flask), else EmailJS/static
+      if (location.port === '5000') {
+        fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+          .then(function(r){ return r.ok; })
+          .then(function(ok){ ok ? done(true) : (createLogEntry(payload), done(false)); })
+          .catch(function(){ createLogEntry(payload); done(false); });
+        return;
+      }
+
       // EmailJS integration if configured via data attributes
       var service = form.getAttribute('data-emailjs-service');
       var template = form.getAttribute('data-emailjs-template');

@@ -213,7 +213,9 @@
         });
         return card;
       }
-      fetch('data/projects.json')
+      // Prefer backend API if running via Flask; fallback to static JSON
+      var url = (location.port === '5000') ? '/api/projects' : 'data/projects.json';
+      fetch(url)
         .then(function(r){ return r.json(); })
         .then(function(list){
           var grid = document.getElementById('projects-grid');
