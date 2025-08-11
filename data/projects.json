@@ -34,6 +34,60 @@
       "results": "High precision/recall on benchmark set.",
       "learnings": "Data quality and augmentation are critical."
     }
+  },
+  {
+    "title": "Equipment Maintenance",
+    "slug": "equipment-maintenance",
+    "poster": "images/s3.png",
+    "video": "",
+    "tags": ["Predictive Maintenance", "Analytics"],
+    "repo": "",
+    "demo": "",
+    "downloads": [],
+    "summary": "Predictive maintenance insights to minimize downtime.",
+    "caseStudy": {
+      "problem": "Forecast failures and schedule maintenance proactively.",
+      "approach": "Feature engineering on sensor data, anomaly detection.",
+      "implementation": "ETL pipelines, model training, thresholding.",
+      "results": "Reduced unplanned outages and costs.",
+      "learnings": "Data drift monitoring is essential in production."
+    }
+  },
+  {
+    "title": "Offshore Engineering",
+    "slug": "offshore-engineering",
+    "poster": "images/s4.png",
+    "video": "",
+    "tags": ["Simulation", "Visualization"],
+    "repo": "",
+    "demo": "",
+    "downloads": [],
+    "summary": "Simulation and reporting for offshore structures.",
+    "caseStudy": {
+      "problem": "Model real-world loads and visualize results.",
+      "approach": "Domain models, parameter sweeps, and dashboards.",
+      "implementation": "Computation engine + front-end visualization.",
+      "results": "Clear insights for engineering decisions.",
+      "learnings": "Stakeholder-friendly visuals accelerate adoption."
+    }
+  },
+  {
+    "title": "Electrical Wiring",
+    "slug": "electrical-wiring",
+    "poster": "images/s5.png",
+    "video": "",
+    "tags": ["Automation", "Safety"],
+    "repo": "",
+    "demo": "",
+    "downloads": [],
+    "summary": "Automation and safety checks for wiring projects.",
+    "caseStudy": {
+      "problem": "Ensure reliable, compliant wiring at scale.",
+      "approach": "Checklists, automated validation, traceability.",
+      "implementation": "Templates, validators, reporting.",
+      "results": "Fewer errors and faster delivery.",
+      "learnings": "Standardization reduces rework dramatically."
+    }
   }
 ]
 
