@@ -46,6 +46,32 @@
         function sec(id, text){ if(!text) return; document.getElementById(id).textContent = text; }
         var cs = p.caseStudy||{};
         sec('prob', cs.problem); sec('approach', cs.approach); sec('impl', cs.implementation); sec('res', cs.results); sec('learn', cs.learnings);
+        
+        // Handle data science specific sections
+        var dsSections = document.getElementById('ds-sections');
+        var hasDSData = false;
+        
+        if (cs.modelArchitecture) {
+          document.getElementById('model-arch').textContent = cs.modelArchitecture;
+          hasDSData = true;
+        }
+        if (cs.dataPipeline) {
+          document.getElementById('data-pipeline').textContent = cs.dataPipeline;
+          hasDSData = true;
+        }
+        if (cs.performanceMetrics) {
+          document.getElementById('perf-metrics').textContent = cs.performanceMetrics;
+          hasDSData = true;
+        }
+        if (cs.deployment) {
+          document.getElementById('deployment').textContent = cs.deployment;
+          hasDSData = true;
+        }
+        
+        if (hasDSData) {
+          dsSections.style.display = 'block';
+        }
+        
         var links = document.getElementById('links');
         if (p.repo) { var a=h('a'); a.href=p.repo; a.textContent='Repository'; a.target='_blank'; a.rel='noopener'; links.appendChild(a); }
         if (p.demo) { var a2=h('a'); a2.style.marginLeft='12px'; a2.href=p.demo; a2.textContent='Live Demo'; a2.target='_blank'; a2.rel='noopener'; links.appendChild(a2); }
@@ -99,6 +125,22 @@
     <p id="res"></p>
     <h5>Learnings</h5>
     <p id="learn"></p>
+    
+    <!-- Data Science Specific Sections -->
+    <div id="ds-sections" style="display: none;">
+      <h5>Model Architecture</h5>
+      <p id="model-arch"></p>
+      
+      <h5>Data Pipeline</h5>
+      <p id="data-pipeline"></p>
+      
+      <h5>Performance Metrics</h5>
+      <p id="perf-metrics"></p>
+      
+      <h5>Deployment & Scaling</h5>
+      <p id="deployment"></p>
+    </div>
+    
     <div class="steps" id="steps"></div>
   </div>
 

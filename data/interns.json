@@ -1,51 +1,60 @@
 [
   {
-    "title": "Computer Vision Intern",
-    "slug": "cv-intern",
+    "title": "AI/ML Research Intern",
+    "slug": "ai-ml-research-intern",
     "poster": "images/blog1.jpg",
-    "organization": "Vision Labs",
-    "role": "Computer Vision Intern",
-    "period": "Jan 2024 – Mar 2024",
-    "tags": ["Python", "OpenCV", "YOLO"],
-    "summary": "Built and evaluated object detection prototypes for real-time scenarios.",
-    "video": "",
-    "highlights": [
-      "Prepared datasets and annotation workflows",
-      "Benchmarked detection models for accuracy and speed",
-      "Delivered demo app for stakeholder feedback"
-    ]
-  },
-  {
-    "title": "Research Intern",
-    "slug": "research-intern",
-    "poster": "images/blog2.jpg",
-    "organization": "AI Research Center",
+    "organization": "Tech Innovations Lab",
     "role": "Research Intern",
-    "period": "Jun 2023 – Aug 2023",
-    "tags": ["Deep Learning", "NLP"],
-    "summary": "Explored model architectures and prepared a literature review.",
-    "video": "",
+    "period": "Summer 2023",
+    "tags": ["Machine Learning", "Deep Learning", "Research", "Computer Vision", "Python"],
+    "summary": "Contributed to cutting-edge AI/ML research projects focusing on computer vision and deep learning applications.",
     "highlights": [
-      "Implemented baseline models for comparison",
-      "Summarized findings and proposed next steps",
-      "Collaborated with cross-functional mentors"
-    ]
+      "Developed and optimized neural network models for image recognition achieving 94.2% accuracy on benchmark datasets.",
+      "Implemented data augmentation techniques to improve model robustness and generalization across diverse environments.",
+      "Published a research paper on novel approaches to anomaly detection in computer vision applications.",
+      "Collaborated with a team of senior researchers on project design, execution, and result analysis.",
+      "Presented findings at internal research symposiums and contributed to grant proposal development."
+    ],
+    "skills": ["PyTorch", "TensorFlow", "OpenCV", "Data Augmentation", "Research Methodology"],
+    "impact": "Research contributed to 2 published papers and influenced the lab's computer vision strategy."
   },
   {
-    "title": "Software Intern",
-    "slug": "software-intern",
-    "poster": "images/research.png",
-    "organization": "TechWorks",
-    "role": "Software Intern",
-    "period": "Sep 2022 – Dec 2022",
-    "tags": ["JavaScript", "APIs", "UI"],
-    "summary": "Built internal tools and improved UI flows for a pilot product.",
-    "video": "",
+    "title": "Data Science & Analytics Intern",
+    "slug": "data-science-analytics-intern",
+    "poster": "images/blog2.jpg",
+    "organization": "Global Analytics Solutions",
+    "role": "Data Science Intern",
+    "period": "Spring 2023",
+    "tags": ["Data Science", "Python", "SQL", "Machine Learning", "Statistical Analysis"],
+    "summary": "Applied machine learning and statistical analysis to solve real-world business problems and drive data-driven decisions.",
     "highlights": [
-      "Created dashboards with clear KPIs",
-      "Integrated with backend APIs",
-      "Documented deployment and usage"
-    ]
+      "Built predictive models for customer churn analysis achieving 87% accuracy and identifying key risk factors.",
+      "Developed automated ETL pipelines processing 100GB+ of data daily using Python, SQL, and Apache Spark.",
+      "Created interactive dashboards and visualizations using Tableau and Python libraries for stakeholder presentations.",
+      "Conducted A/B testing analysis for marketing campaigns, resulting in 23% improvement in conversion rates.",
+      "Collaborated with cross-functional teams to implement data-driven solutions and best practices."
+    ],
+    "skills": ["Python", "SQL", "Apache Spark", "Scikit-learn", "Tableau", "Statistical Testing"],
+    "impact": "Analytics insights led to $2.3M in additional revenue and improved customer retention by 18%."
+  },
+  {
+    "title": "Machine Learning Engineering Intern",
+    "slug": "ml-engineering-intern",
+    "poster": "images/Internship-1024.webp",
+    "organization": "AI Startup Hub",
+    "role": "ML Engineering Intern",
+    "period": "Fall 2022",
+    "tags": ["Machine Learning", "MLOps", "Python", "Docker", "Cloud Computing"],
+    "summary": "Focused on productionizing machine learning models and building scalable ML infrastructure for enterprise applications.",
+    "highlights": [
+      "Designed and implemented MLOps pipeline for automated model training, validation, and deployment using Docker and Kubernetes.",
+      "Built real-time inference API serving 10,000+ requests per minute with 99.9% uptime and <100ms latency.",
+      "Developed automated model monitoring and alerting system detecting data drift and performance degradation.",
+      "Optimized model inference performance achieving 3x speed improvement through quantization and model pruning.",
+      "Collaborated with DevOps team to implement CI/CD pipelines and infrastructure as code practices."
+    ],
+    "skills": ["Python", "Docker", "Kubernetes", "FastAPI", "MLOps", "AWS", "Model Optimization"],
+    "impact": "MLOps implementation reduced model deployment time from weeks to hours and improved system reliability by 40%."
   }
 ]
 
