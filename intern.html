@@ -26,7 +26,6 @@
   <link href="style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="responsive.css" rel="stylesheet" />
-  <link href="css/theme.css" rel="stylesheet" />
 </head>
 
 <body class="sub_page">
@@ -78,21 +77,52 @@
 
 
 
-  <!-- intern section (match project card format) -->
-  <section class="service_section layout_padding">
+  <!-- blog section -->
+
+  <section class="blog_section layout_padding">
     <div class="container">
       <div class="heading_container">
         <h2>
-          Intern
+          INTERN
         </h2>
         <img src="images/research.png" alt="">
       </div>
-
-      <div class="service_container" id="intern-grid"></div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="box">
+            <div class="img-box">
+              <img src="images/blog1.jpg" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Blog Title Goes Here
+              </h5>
+              <p>
+                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="box">
+            <div class="img-box">
+              <img src="images/blog2.jpg" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Blog Title Goes Here
+              </h5>
+              <p>
+                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
- 
-  <!-- end intern section -->
+
+  <!-- end blog section -->
 
 
 
@@ -192,29 +222,6 @@
 
   <script src="jquery-3.4.1.min.js"></script>
   <script src="bootstrap.js"></script>
-  <script>
-    (function(){
-      function h(tag, cls){ var el=document.createElement(tag); if(cls) el.className=cls; return el; }
-      function card(it){
-        var card = h('a','box');
-        card.href = 'intern_detail.html?slug=' + encodeURIComponent(it.slug);
-        var imgBox = h('div','img-box');
-        var img = h('img','img1'); img.src = it.poster; img.alt = it.title; img.loading = 'lazy';
-        imgBox.appendChild(img); card.appendChild(imgBox);
-        var detail = h('div','detail-box');
-        var h5 = h('h5'); h5.textContent = it.title; detail.appendChild(h5);
-        var p = h('p'); p.textContent = it.summary || ''; detail.appendChild(p);
-        card.appendChild(detail);
-        return card;
-      }
-      var url=(location.port==='5000')? '/api/interns' : 'data/interns.json';
-      fetch(url).then(function(r){return r.json()}).then(function(list){
-        var grid=document.getElementById('intern-grid');
-        (list||[]).forEach(function(it){ grid.appendChild(card(it)); });
-      });
-    })();
-  </script>
-  <script src="js/main.js" defer></script>
 
 </body>
 
